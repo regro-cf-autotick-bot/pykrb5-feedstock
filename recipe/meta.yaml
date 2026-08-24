@@ -1,17 +1,17 @@
 {% set name = "pykrb5" %}
-{% set version = "0.9.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/k/krb5/krb5-{{ version }}.tar.gz
-  sha256: 4cdd2c85ff4770108edaf48fedf19888cf956ff374e2e97e40f8412b048caee6
+  url: https://files.pythonhosted.org/packages/source/k/krb5/krb5-{{ version }}.tar.gz
+  sha256: 8f4711a0ab11ee43fda567371ef6d9487afdbd4f156ca093e8fb306f4cc685ae
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
   skip: true  # [win]
 
 requirements:
